@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soggy Baltic Adventure — Riga to Vilnius</title>
+<meta name="description" content="Itinerary for the Riga → Curonian Spit → Vilnius trip, 12–20 August.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">
+      <span class="brand-emoji" aria-hidden="true">🌊</span>
+      <div>
+        <h1 id="trip-title">Soggy Baltic Adventure</h1>
+        <p id="trip-tagline">Riga → Curonian Spit → Vilnius</p>
+      </div>
+    </div>
+    <p id="trip-date-range" class="date-range"></p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="page-grid">
+
+    <section class="route-toggle-wrap" aria-label="Choose route">
+      <div class="route-toggle" role="tablist" aria-label="Route">
+        <button type="button" class="route-btn" data-route="siauliai" role="tab" aria-selected="true">Option #1</button>
+        <button type="button" class="route-btn" data-route="liepaja" role="tab" aria-selected="false">Option #2</button>
+      </div>
+    </section>
+
+    <aside class="map-col" aria-label="Route map">
+      <h2>The route</h2>
+      <div id="route-map" class="route-map" role="img" aria-label="Map of the route from Riga to Vilnius via the Curonian Spit"></div>
+      <p class="route-legend">
+        <span class="legend-dot legend-dot-main"></span> overnight stop
+        <span id="legend-sidetrip">
+          &nbsp;&nbsp;
+          <span class="legend-dot legend-dot-side"></span> optional day-trip (dashed)
+        </span>
+        &nbsp;&nbsp;
+        <span class="legend-dot legend-dot-current"></span> where we are in the itinerary
+      </p>
+    </aside>
+
+    <section class="plan-summary" aria-label="Trip summary">
+      <p class="plan-summary-label">Trip Summary</p>
+      <p id="trip-summary-text"></p>
+      <p class="nights" id="trip-nights"></p>
+      <p class="nights-footnote" id="nights-footnote"></p>
+    </section>
+
+    <div id="route-slideshow" class="route-slideshow" aria-label="Photos for this route"></div>
+
+    <div class="itinerary-col">
+      <div class="view-toggle-wrap">
+        <button type="button" id="condense-toggle" class="view-toggle-btn" aria-pressed="false">
+          Condense days
+        </button>
+      </div>
+
+      <section class="days" id="days" aria-label="Day by day">
+        <!-- rendered by script.js -->
+      </section>
+    </div>
+
+  </div>
+
+  <section class="open-items" aria-label="Open items / not yet booked">
+    <h2>Open items — not yet booked</h2>
+    <ul id="open-items-list"></ul>
+    <p class="hint">Fill these in as things get booked: edit <code>data.js</code> and set an item's <code>status</code> to <code>"booked"</code>, or add an accommodation name.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Skeleton itinerary — accommodation and bookings still to be filled in. Edit <code>data.js</code> to update.</p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
