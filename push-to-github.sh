@@ -23,8 +23,14 @@ git add -A
 git commit -m "Initial commit: Soggy Baltic Adventure itinerary site"
 
 echo ""
-echo "Creating GitHub repo '$REPO_NAME' under your account and pushing..."
-gh repo create "$REPO_NAME" --public --source=. --remote=origin --push
+if gh repo view "$REPO_NAME" > /dev/null 2>&1; then
+  echo "Repo '$REPO_NAME' already exists on GitHub — linking to it and pushing..."
+  git remote add origin "https://github.com/$(gh api user -q .login)/$REPO_NAME.git"
+  git push -u origin main --force
+else
+  echo "Creating GitHub repo '$REPO_NAME' under your account and pushing..."
+  gh repo create "$REPO_NAME" --public --source=. --remote=origin --push
+fi
 
 echo ""
 echo "Done. Repo is live at:"
