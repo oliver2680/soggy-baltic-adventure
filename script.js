@@ -36,6 +36,7 @@
     bike: { icon: "🚲", label: "Bicycle" },
     foot: { icon: "🚶", label: "On foot" },
     car: { icon: "🚗", label: "Car" },
+    bus: { icon: "🚌", label: "Bus" },
   };
 
   function renderTravelModes(modes) {

@@ -33,11 +33,9 @@ The top-level `openItems` array is the master checklist shown at the bottom of
 the page — delete a line once it's sorted, or leave it and just update the
 underlying day entry.
 
-The itinerary currently assumes all three travellers arrive in Riga on 12
-August. If that changes, the whole timeline shifts a day later — Riga picks
-up an extra night, Vilnius loses one, departure moves from Thursday to
-Friday. Ask Claude to reinstate a two-scenario toggle if that becomes a live
-possibility again (an earlier version of this site had one).
+Two of three travellers arrive in Riga on 12 August; the third (David) joins
+the next day, which is why Riga gets a fixed two nights and there's a
+dedicated "Riga together" day before the routes properly get going.
 
 ## Adding photos to the route slideshow
 
