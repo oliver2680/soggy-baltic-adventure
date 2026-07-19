@@ -5,7 +5,7 @@
   let mapInstance = null;
   let currentMarker = null;
   let markerAnimFrame = null;
-  let currentRouteKey = "siauliai";
+  let currentRouteKey = "liepaja";
   let scrollHandlerRef = null;
   let resizeHandlerRef = null;
 
@@ -158,10 +158,7 @@
     }
 
     map.fitBounds(bounds, { padding: [40, 40] });
-    // Net zoom adjustment relative to fitBounds' tightest fit: Option #2
-    // (Liepāja) was zoomed in one click from an earlier zoomed-out state,
-    // netting to 0. Option #1 (Šiauliai) has now also been zoomed in one
-    // click from its earlier zoomed-out state, netting to 0 as well.
+    // Net zoom adjustment relative to fitBounds' tightest fit.
     const zoomOffset = 0;
     if (zoomOffset !== 0) map.setZoom(map.getZoom() + zoomOffset);
 

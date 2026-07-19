@@ -72,50 +72,18 @@ body {
   font-size: 0.9rem;
 }
 
-/* Route toggle (choose between itinerary variants) */
-.route-toggle-wrap {
-  margin: 0;
-  text-align: center;
-}
-
-.route-toggle {
-  display: inline-flex;
-  background: var(--sand-dark);
-  border-radius: 999px;
-  padding: 4px;
-  gap: 4px;
-}
-
-.route-btn {
-  border: none;
-  background: transparent;
-  padding: 10px 22px;
-  border-radius: 999px;
-  font-size: 0.92rem;
-  font-weight: 600;
-  color: var(--muted);
-  cursor: pointer;
-}
-
-.route-btn.active {
-  background: var(--amber);
-  color: #fff;
-}
-
-/* Whole-page layout grid. Every top-level section below the route toggle
-   (map, trip summary, photo carousel, itinerary) is a named grid area so
-   the visual order can differ between mobile and desktop without moving
-   anything in the DOM.
-   Mobile (single column): toggle -> map -> summary -> slideshow -> itinerary.
-   Desktop (two columns): toggle/summary/slideshow span full width up top,
-   then itinerary (left) and map (right) sit side by side below. */
+/* Whole-page layout grid. Every top-level section (map, trip summary, photo
+   carousel, itinerary) is a named grid area so the visual order can differ
+   between mobile and desktop without moving anything in the DOM.
+   Mobile (single column): map -> summary -> slideshow -> itinerary.
+   Desktop (two columns): summary/slideshow span full width up top, then
+   itinerary (left) and map (right) sit side by side below. */
 .page-grid {
   margin: 24px 0;
   display: grid;
   gap: 24px;
   grid-template-columns: 1fr;
   grid-template-areas:
-    "toggle"
     "map"
     "summary"
     "slideshow"
@@ -132,10 +100,6 @@ body {
   min-width: 0;
 }
 
-.route-toggle-wrap {
-  grid-area: toggle;
-}
-
 .plan-summary {
   grid-area: summary;
 }
@@ -150,7 +114,6 @@ body {
     align-items: start;
     gap: 32px;
     grid-template-areas:
-      "toggle    toggle"
       "summary   summary"
       "slideshow slideshow"
       "itinerary map";
