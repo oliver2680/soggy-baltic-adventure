@@ -120,11 +120,11 @@ const dayLiepaja2 = {
 const dayLiepaja3 = {
   date: "2026-08-15", weekday: "Sat", dayLabel: "15 Aug",
   location: "Liepāja → Palanga", title: "Liepāja → Palanga",
-  description: `Pick up a rental car in Liepāja. Drive south, stopping at Pape Nature Park (~15 min from Liepāja) for the coastal dune trail, the shorter Lake Pape loop, or the full ~30km hike around the lake (<a href="https://www.wikiloc.com/hiking-trails/apkart-papes-ezeram-lv-24842240" target="_blank" rel="noopener noreferrer">Apkārt Papes ezeram</a> on Wikiloc) — plus the wild Konik horses. Continue into Lithuania to Palanga — Lithuania's main beach resort, a good place to land for the evening: the pier, Basanavičiaus Street, the Botanical Park, an 18km beach. Return the rental car in Palanga. Overnight there.`,
-  note: `This is a one-way, cross-border rental (Latvia → Lithuania) — currently planned to drop in Palanga, but worth pricing up extending it through to Klaipėda instead: dropping there would skip Sunday morning's bus and let the group move straight onto the bikes. Whichever drop point ends up cheaper/available, confirm the agency supports it.`,
+  description: `Pick up a rental car in Liepāja. Drive south, stopping at Pape Nature Park (~15 min from Liepāja) for the coastal dune trail, the shorter Lake Pape loop, or the full ~30km hike around the lake (<a href="https://www.wikiloc.com/hiking-trails/apkart-papes-ezeram-lv-24842240" target="_blank" rel="noopener noreferrer">Apkārt Papes ezeram</a> on Wikiloc) — plus the wild Konik horses. Continue into Lithuania to Palanga — Lithuania's main beach resort, a good place to land for the evening: the pier, Basanavičiaus Street, the Botanical Park, an 18km beach. Keep the car overnight — it's now a one-way rental through to Klaipėda, not returned here.`,
+  note: `One-way, cross-border rental (Latvia → Lithuania), extended through to Klaipėda rather than dropped in Palanga — lets the group drive themselves to Klaipėda on Sunday morning instead of taking the bus. Confirm the agency supports the Klaipėda drop point.`,
   accommodation: { city: "Palanga", name: "Jūros takas 3, Palanga, Klaipėdos apskritis 00135, Lithuania", status: "booked" },
   bookings: [
-    { label: "One-way rental car, Liepāja → Palanga (confirm the agency supports this drop point)", status: "tbd" },
+    { label: "One-way rental car, Liepāja → Klaipėda (confirm the agency supports this drop point)", status: "tbd" },
   ],
   travel: ["car", "foot"],
   distance: "~75 km (car) + 30 km (hike around Lake Pape)",
@@ -137,23 +137,28 @@ const dayLiepaja3 = {
 
 // Replaces the old two-day "hike to Klaipėda, then cycle onto the Spit"
 // pair — with Riga's extra night, those two days had to become one. The
-// coastal hike is dropped in favour of a short bus/ferry transfer into
-// Klaipėda, then the same cycle route onwards to Nida.
+// coastal hike is dropped in favour of a short drive into Klaipėda (in the
+// rental car extended from Liepāja, see dayLiepaja3), then the same cycle
+// route onwards to Nida.
 const dayLiepajaToSpit = {
   date: "2026-08-16", weekday: "Sun", dayLabel: "16 Aug",
-  location: "Palanga → Curonian Spit", title: "Bus to Klaipėda, then cycle onto the Spit",
-  description: `Morning bus from Palanga to Klaipėda (~30 min, frequent departures along the coast) — the old plan had a full day's hike here, but with Riga picking up an extra night this leg gets compressed into a quick transfer instead. Pick up rental bikes in Klaipėda. Passenger ferry from the Old Ferry Terminal (foot passengers/cyclists only) across to Smiltynė — board an early crossing, bike space per ferry is limited in peak season. Dedicated EuroVelo 10/13 path down the Spit: ~21km to Juodkrantė for lunch (smoked fish, Hill of Witches sculpture trail if there's time), then ~30km through the Nagliai Nature Reserve and grey dunes into Nida by evening. Short bus hop plus ~52km of cycling — a long day, but doable with an early start out of Palanga.`,
+  location: "Palanga → Curonian Spit", title: "Drive to Klaipėda, then cycle onto the Spit",
+  description: `Morning drive from Palanga to Klaipėda (~30 min) in the rental car picked up in Liepāja — drop it off there, no bus needed. Pick up rental bikes in Klaipėda. Passenger ferry from the Old Ferry Terminal (foot passengers/cyclists only) across to Smiltynė — board an early crossing, bike space per ferry is limited in peak season. Dedicated EuroVelo 10/13 path down the Spit: ~21km to Juodkrantė for lunch (smoked fish, Hill of Witches sculpture trail if there's time), then ~30km through the Nagliai Nature Reserve and grey dunes into Nida by evening. Short drive plus ~52km of cycling — a long day, but doable with an early start out of Palanga.`,
   note: `Confirm ahead of time whether the bike rental allows drop-off in Nida, or whether the bikes need to come back to Klaipėda (doable by bus/ferry on the day you leave the Spit).`,
-  accommodation: { city: "Nida", name: null, status: "tbd", note: "Richard to book" },
+  accommodation: {
+    city: "Nida",
+    name: '<a href="https://www.airbnb.com/rooms/32880501" target="_blank" rel="noopener noreferrer">Family room (5 persons) next to lagoon</a>',
+    status: "booked",
+    note: "Booked by Richard",
+  },
   bookings: [
-    { label: "Palanga–Klaipėda bus", status: "tbd" },
     { label: "Bike rental, Klaipėda (confirm Nida drop-off) — David to book", status: "tbd" },
   ],
-  travel: ["bus", "bike"],
-  distance: "~30 km bus + 52 km cycle",
+  travel: ["car", "bike"],
+  distance: "~30 km car + 52 km cycle",
   mapPath: [
     [55.9199, 21.0687], // Palanga
-    [55.7033, 21.1443], // Klaipėda (bus + ferry, no overnight)
+    [55.7033, 21.1443], // Klaipėda (car dropped off, then ferry — no overnight)
     [55.5324, 21.1197], // Juodkrantė (lunch)
     [55.3049, 20.9928], // Nida
   ],
@@ -163,7 +168,12 @@ const dayLiepajaSpitRest = {
   date: "2026-08-17", weekday: "Mon", dayLabel: "17 Aug",
   location: "Curonian Spit", title: "Curonian Spit, rest day",
   description: `Genuinely nothing else planned — after yesterday's long transfer-plus-cycle day, this one earns its keep. Dune, beach, amber-hunting, however slow you want it.`,
-  accommodation: { city: "Nida", name: null, status: "tbd", note: "Richard to book" },
+  accommodation: {
+    city: "Nida",
+    name: '<a href="https://www.airbnb.com/rooms/32880501" target="_blank" rel="noopener noreferrer">Family room (5 persons) next to lagoon</a>',
+    status: "booked",
+    note: "Booked by Richard",
+  },
   bookings: [],
   travel: ["foot"],
   distance: "Local only (rest day)",
@@ -211,8 +221,8 @@ const TRIP = {
           { name: "Riga", lat: 56.9496, lng: 24.1052, kind: "overnight", note: "Arrival & departure city — 2 nights" },
           { name: "Liepāja", lat: 56.5142, lng: 21.0128, kind: "overnight", note: "1 night — Karosta naval garrison, Northern Forts, Karosta Prison" },
           { name: "Pape Nature Park", lat: 56.1670, lng: 21.0340, kind: "waypoint", note: "Coastal dune hike or Lake Pape loop — wild Konik horses" },
-          { name: "Palanga", lat: 55.9199, lng: 21.0687, kind: "overnight", note: "1 night — pier, Basanavičiaus Street, Botanical Park, 18km beach; rental car dropped here" },
-          { name: "Klaipėda", lat: 55.7033, lng: 21.1443, kind: "waypoint", note: "Quick bus + ferry transfer en route to the Spit — no overnight here any more" },
+          { name: "Palanga", lat: 55.9199, lng: 21.0687, kind: "overnight", note: "1 night — pier, Basanavičiaus Street, Botanical Park, 18km beach" },
+          { name: "Klaipėda", lat: 55.7033, lng: 21.1443, kind: "waypoint", note: "Rental car dropped here, then ferry en route to the Spit — no overnight here any more" },
           { name: "Juodkrantė", lat: 55.5324, lng: 21.1197, kind: "waypoint", note: "Lunch stop on the cycle — smoked fish, Hill of Witches", showMarker: false },
           { name: "Curonian Spit", lat: 55.3049, lng: 20.9928, kind: "overnight", note: "2 nights — dunes, we'll all get our willies out to scare off the Russians, near the Kaliningrad border" },
           { name: "Vilnius", lat: 54.6872, lng: 25.2797, kind: "overnight", note: "Old town, Užupis — 2 nights" },
@@ -237,10 +247,7 @@ const TRIP = {
   openItems: [
     { text: "Book the Riga–Liepāja bus or train" },
     { text: "Book the Karosta Prison tour in Liepāja (standard, or the \"Behind the Bars\" experience)" },
-    { text: "Decide whether to extend the Liepāja rental car through to Klaipėda instead of dropping in Palanga — would skip the Sunday-morning bus" },
-    { text: "Book the rental car, Liepāja → Palanga (or → Klaipėda, if extended)" },
-    { text: "Book the Palanga–Klaipėda bus (not needed if the rental car gets extended to Klaipėda)" },
-    { text: "Book accommodation: Nida (2 nights) — Richard's booking it" },
+    { text: "Book the rental car, Liepāja → Klaipėda (confirm the agency supports the one-way, cross-border drop point)" },
     { text: "Book bike rental in Klaipėda — David's booking it; confirm whether Nida drop-off is possible" },
     { text: "Book the Klaipėda–Vilnius train" },
     { text: "Decide whether to swap in Rundāle Palace" },
